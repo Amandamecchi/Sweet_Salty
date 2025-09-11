@@ -41,7 +41,7 @@ export default function Usuarios() {
           <div key={usuario.id} className={styles.card}>
             <p className={styles.nome}>{usuario.nome_usuario}</p>
             <p className={styles.email}>{usuario.email}</p>
-            <p className={styles.data}>
+            <p>
               Criado em:{" "}
               {new Date(usuario.data_criacao).toLocaleDateString("pt-BR")}
             </p>
@@ -49,14 +49,13 @@ export default function Usuarios() {
         ))}
       </div>
 
-      {/* Paginação manual */}
       <div className={styles.pagination}>
         {Array.from(
           { length: Math.ceil(usuarios.length / pageSize) },
           (_, i) => (
             <button
               key={i}
-              className={`${styles.pageButton} ${
+              className={`${styles.paginationButton} ${
                 current === i + 1 ? styles.active : ""
               }`}
               onClick={() => setCurrent(i + 1)}

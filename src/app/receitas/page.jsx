@@ -7,7 +7,6 @@ export default function Receitas() {
   const [loading, setLoading] = useState(true);
   const [receitas, setReceitas] = useState([]);
 
-  // Busca as receitas da API
   useEffect(() => {
     const fetchReceitas = async () => {
       try {
