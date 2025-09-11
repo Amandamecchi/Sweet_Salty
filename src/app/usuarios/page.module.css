@@ -1,0 +1,99 @@
+/* Estilos para a página de usuários */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nome {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.email {
+  color: #666;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.paginationButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.paginationButton:hover {
+  background: #0056b3;
+}
+
+.paginationButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.error {
+  text-align: center;
+  color: #dc3545;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}

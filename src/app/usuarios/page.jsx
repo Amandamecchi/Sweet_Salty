@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import styles from "./page.module.css";
 
 export default function Usuarios() {
   const [loading, setLoading] = useState(true);
@@ -8,7 +9,7 @@ export default function Usuarios() {
   const [current, setCurrent] = useState(1);
   const pageSize = 5;
 
-  // Busca os usuários da API
+
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
@@ -25,7 +26,6 @@ export default function Usuarios() {
     fetchUsuarios();
   }, []);
 
-  // Paginação simples
   const paginatedUsuarios = () => {
     const start = (current - 1) * pageSize;
     return usuarios.slice(start, start + pageSize);
