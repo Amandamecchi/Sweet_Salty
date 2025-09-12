@@ -14,7 +14,7 @@ export default function Usuarios() {
     const fetchUsuarios = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/usuarios`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/usuarios`
         );
         setUsuarios(res.data);
       } catch (error) {

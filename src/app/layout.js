@@ -8,11 +8,11 @@ const font = Roboto ({
 });
 
 export const metadata = {
-    title: "<escreva o nome para aparecer na aba do navegador>",
+    title: "SweetSalty",
     icons: {
     icon: "/icons/favicon.ico",
   },
-    description: "Projeto pra mostrar tudo que eu sei",
+    description: "Projeto Final - Desenvolvimento Full Stack (front-end + back-end) | Website sobre Receitas Culinárias",
 
 };
 

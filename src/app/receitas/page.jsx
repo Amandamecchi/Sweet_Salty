@@ -11,7 +11,7 @@ export default function Receitas() {
     const fetchReceitas = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/receitas`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/receitas`
         );
         setReceitas(res.data);
       } catch (error) {
