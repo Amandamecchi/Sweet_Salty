@@ -1,5 +1,6 @@
 import React from "react";
 import { Roboto } from "next/font/google";
+import Header from "../components/Header";
 import "./globals.css";
 
 const font = Roboto ({
@@ -10,7 +11,7 @@ const font = Roboto ({
 export const metadata = {
     title: "SweetSalty",
     icons: {
-    icon: "/icons/favicon.ico",
+    icon: "/icons/restaurant.png",
   },
     description: "Projeto Final - Desenvolvimento Full Stack (front-end + back-end) | Website sobre Receitas Culinárias",
 
@@ -19,7 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html>
-            <body className={font.variable}>{children}</body>
+            <body className={font.variable}>
+                <Header />
+                {children}
+            </body>
         </html>
     );
 }

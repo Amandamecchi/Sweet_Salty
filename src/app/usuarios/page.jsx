@@ -65,6 +65,22 @@ export default function Usuarios() {
           )
         )}
       </div>
+      
+      <div className={styles.backButtonContainer}>
+        <button 
+          className={styles.backButton}
+          onClick={() => window.location.href = '/receitas'}
+        >
+          Voltar para Receitas
+        </button>
+        {' '}
+        <button 
+          className={styles.backButton}
+          onClick={() => window.location.href = '/home'}
+        >
+          Voltar para Home
+        </button>
+      </div>
     </main>
   );
 }
