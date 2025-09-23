@@ -1,4 +1,4 @@
-import styles from '../styles/buttons.module.css';
+import styles from '../components/buttons.module.css';
 
 export default function Button({ 
   children, 
@@ -13,22 +13,18 @@ export default function Button({
   const getButtonClasses = () => {
     let classes = [styles.btn];
     
-    // Adicionar variante
     if (variant !== 'primary') {
       classes.push(styles[`btn--${variant}`]);
     }
     
-    // Adicionar tamanho
     if (size !== 'medium') {
       classes.push(styles[`btn--${size}`]);
     }
     
-    // Adicionar ícone se especificado
     if (icon === 'back') {
       classes.push(styles['btn--back']);
     }
     
-    // Adicionar classes personalizadas
     if (className) {
       classes.push(className);
     }
@@ -48,7 +44,6 @@ export default function Button({
   );
 }
 
-// Componente específico para links estilizados como botões
 export function ButtonLink({ 
   children, 
   href, 

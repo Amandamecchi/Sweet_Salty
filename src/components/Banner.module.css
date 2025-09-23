@@ -1,0 +1,102 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 400px; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(110, 55, 3, 0.1); 
+}
+
+.bannerImage {
+  transition: transform 0.3s ease-in-out;
+}
+
+.bannerContent {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  text-align: left;
+  color: white;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: var(--font), sans-serif;
+}
+
+.bannerTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bannerSubtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    height: 250px;
+  }
+  
+  .bannerContent {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  
+  .bannerTitle {
+    font-size: 2.2rem;
+  }
+  
+  .bannerSubtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerContainer {
+    height: 200px;
+    border-radius: 4px;
+  }
+  
+  .bannerContent {
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .bannerTitle {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .bannerSubtitle {
+    font-size: 0.9rem;
+  }
+}
+
+
+.bannerContainer.small {
+  height: 300px;
+}
+
+.bannerContainer.medium {
+  height: 400px;
+}
+
+.bannerContainer.large {
+  height: 600px;
+}
+
+.bannerContainer.fullHeight {
+  height: 100vh;
+}
+
+.bannerImage {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}

@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import Footer from "@/components/Footer";
 
 export default function Usuarios() {
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,7 @@ export default function Usuarios() {
   if (loading) return <p>Carregando usuários...</p>;
 
   return (
+    <>
     <main className={styles.main}>
       <h1 className={styles.title}>Usuários</h1>
       <div className={styles.cardsContainer}>
@@ -82,5 +84,7 @@ export default function Usuarios() {
         </button>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

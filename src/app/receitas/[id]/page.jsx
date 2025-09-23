@@ -54,7 +54,7 @@ export default function ReceitaDetalhes() {
             className={styles.backButton}
             onClick={() => router.push('/receitas')}
           >
-            ← Voltar para Receitas
+            Voltar para Receitas
           </button>
         </div>
       </main>
@@ -69,7 +69,7 @@ export default function ReceitaDetalhes() {
             className={styles.backButton}
             onClick={() => router.push('/receitas')}
           >
-            ← Voltar para Receitas
+            Voltar para Receitas
           </button>
           <h1 className={styles.title}>{receita.nome_receita}</h1>
         </div>

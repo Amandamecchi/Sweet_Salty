@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import Footer from "@/components/Footer";
 
 export default function Receitas() {
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,6 @@ export default function Receitas() {
     fetchReceitas();
   }, []);
 
-  // Filtrar receitas baseado no termo de pesquisa
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredReceitas(receitas);
@@ -60,12 +60,12 @@ export default function Receitas() {
   };
 
   return (
+    <>
     <main className={styles.main}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Nossas Receitas Especiais</h1>
           
-          {/* Caixa de Pesquisa */}
           <div className={styles.searchContainer}>
             <div className={styles.searchBox}>
               <input
@@ -147,9 +147,12 @@ export default function Receitas() {
           className={styles.backButton}
           onClick={() => window.location.href = '/'}
         >
-          ← Voltar para Home
+          Voltar para Home
         </button>
       </div>
     </main>
+
+    <Footer />
+    </>
   );
 }

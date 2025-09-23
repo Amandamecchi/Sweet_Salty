@@ -1,0 +1,283 @@
+
+.footer {
+  background: linear-gradient(135deg, #F5E1D3 0%, #E8D5C4 50%, #DBC4B0 100%);
+  border-top: 4px solid #8B4513;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+  font-family: var(--font), sans-serif;
+  box-shadow: 0 -4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.brandSection {
+  padding-right: 1rem;
+}
+
+.brandTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #8B4513;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
+}
+
+.brandDescription {
+  color: #5D4037;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.linksSection,
+.contactSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #A0522D;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #CD853F;
+  padding-bottom: 0.5rem;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksList li {
+  margin-bottom: 0.7rem;
+}
+
+.link {
+  color: #6D4C41;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0;
+  display: inline-block;
+  position: relative;
+}
+
+.link::before {
+  content: '→';
+  color: #CD853F;
+  margin-right: 0.5rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #8B4513;
+  transform: translateX(5px);
+}
+
+.link:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contactItem {
+  color: #6D4C41;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  gap: 0.5rem;
+}
+
+.contactIcon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.contactItem:hover {
+  color: #8B4513;
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid #CD853F;
+  margin-top: 2rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+}
+
+.socialIcon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.socialIcon:hover {
+  background: linear-gradient(135deg, #A0522D 0%, #CD853F 50%, #DEB887 100%);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+}
+
+.socialIcon:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.copyright {
+  color: #8D6E63;
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .brandSection {
+    padding-right: 0;
+  }
+  
+  .bottomSection {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .socialIcons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandTitle {
+    font-size: 1.7rem;
+  }
+  
+  .brandDescription {
+    font-size: 0.9rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+  
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .socialIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .contactIcon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: linear-gradient(135deg, #3E2723 0%, #4E342E 50%, #5D4037 100%);
+    border-top-color: #A0522D;
+  }
+  
+  .brandTitle {
+    color: #DEB887;
+  }
+  
+  .brandDescription {
+    color: #BCAAA4;
+  }
+  
+  .sectionTitle {
+    color: #CD853F;
+    border-bottom-color: #A0522D;
+  }
+  
+  .link {
+    color: #BCAAA4;
+  }
+  
+  .link:hover {
+    color: #DEB887;
+  }
+  
+  .contactItem {
+    color: #BCAAA4;
+  }
+  
+  .contactItem:hover {
+    color: #DEB887;
+  }
+  
+  .bottomSection {
+    border-top-color: #A0522D;
+  }
+  
+  .copyright {
+    color: #A1887F;
+  }
+}

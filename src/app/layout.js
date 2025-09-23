@@ -1,9 +1,11 @@
 import React from "react";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Header from "../components/Header";
+import ScrollToTop from "../components/ScrollToTop";
 import "./globals.css";
 
-const font = Roboto ({
+const font = Poppins({
+  weight: ['400', '600', '700'],
   variable: "--font",
   subsets: ["latin"],
 });
@@ -11,10 +13,11 @@ const font = Roboto ({
 export const metadata = {
     title: "SweetSalty",
     icons: {
-    icon: "/icons/restaurant.png",
-  },
+        icon: "/icons/restaurant (1).png",
+        shortcut: "/icons/restaurant (1).png",
+        apple: "/icons/restaurant (1).png",
+    },
     description: "Projeto Final - Desenvolvimento Full Stack (front-end + back-end) | Website sobre Receitas Culinárias",
-
 };
 
 export default function RootLayout({ children }) {
@@ -23,6 +26,7 @@ export default function RootLayout({ children }) {
             <body className={font.variable}>
                 <Header />
                 {children}
+                <ScrollToTop />
             </body>
         </html>
     );
