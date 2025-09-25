@@ -41,12 +41,49 @@ export default function Usuarios() {
       <div className={styles.cardsContainer}>
         {paginatedUsuarios().map((usuario) => (
           <div key={usuario.id} className={styles.card}>
-            <p className={styles.nome}>{usuario.nome_usuario}</p>
-            <p className={styles.email}>{usuario.email}</p>
-            <p>
-              Criado em:{" "}
-              {new Date(usuario.data_criacao).toLocaleDateString("pt-BR")}
-            </p>
+            <div className={styles.cardHeader}>
+              <div className={styles.avatarContainer}>
+                <div className={styles.avatar}>
+                  {usuario.nome_usuario.charAt(0).toUpperCase()}
+                </div>
+                <div className={styles.userStatus}>
+                  <span className={styles.statusBadge}>Ativo</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.cardBody}>
+              <h3 className={styles.nome}>{usuario.nome_usuario}</h3>
+              <p className={styles.email}>
+                <span className={styles.emailIcon}>✉</span>
+                {usuario.email}
+              </p>
+              
+              <div className={styles.userInfo}>
+                <div className={styles.infoItem}>
+                  <span className={styles.infoLabel}>ID:</span>
+                  <span className={styles.infoValue}>#{usuario.id}</span>
+                </div>
+                
+                <div className={styles.infoItem}>
+                  <span className={styles.infoLabel}>Membro desde:</span>
+                  <span className={styles.infoValue}>
+                    {new Date(usuario.data_criacao).toLocaleDateString("pt-BR", {
+                      day: "2-digit",
+                      month: "long",
+                      year: "numeric"
+                    })}
+                  </span>
+                </div>
+
+                <div className={styles.infoItem}>
+                  <span className={styles.infoLabel}>Tempo ativo:</span>
+                  <span className={styles.infoValue}>
+                    {Math.floor((new Date() - new Date(usuario.data_criacao)) / (1000 * 60 * 60 * 24))} dias
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>

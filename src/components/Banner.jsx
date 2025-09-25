@@ -12,7 +12,7 @@ const Banner = ({
   return (
     <div className={`${styles.bannerContainer} ${className}`} {...props}>
       <Image
-        src="/image/bolinhos.jpg"
+        src="/image/recheio.jpg"
         alt={alt}
         fill
         priority={priority}
