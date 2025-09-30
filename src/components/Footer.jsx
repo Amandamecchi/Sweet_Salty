@@ -88,7 +88,7 @@ const Footer = () => {
                     </div>
                     
                     <p className={styles.copyright}>
-                        © 2024 Sweet & Salty. Todos os direitos reservados.
+                        © 2025 Sweet & Salty. Todos os direitos reservados.
                     </p>
                 </div>
             </div>
