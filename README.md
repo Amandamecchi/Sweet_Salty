@@ -8,6 +8,17 @@
   [![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
   [![CSS Modules](https://img.shields.io/badge/CSS-Modules-pink?style=for-the-badge&logo=css3)](https://github.com/css-modules/css-modules)
+  
+  ---
+  
+  ## 🌐 **Acesse o Projeto Online**
+  
+  [![Deploy no Vercel](https://img.shields.io/badge/Vercel-Deploy-black?style=for-the-badge&logo=vercel)](https://sweet-salty.vercel.app/home)
+  
+  **🔗 Link direto: [https://sweet-salty.vercel.app/home](https://sweet-salty.vercel.app/home)**
+  
+  > ✨ Experimente todas as funcionalidades do Sweet & Salty sem precisar configurar nada localmente!
+  
 </div>
 
 ## 📖 Sobre o Projeto
@@ -199,14 +210,23 @@ npm run dev
 
 Após seguir o tutorial completo acima, você poderá navegar pelas seguintes páginas:
 
+> 🌐 **Alternativa**: Você também pode acessar diretamente o projeto online em [https://sweet-salty.vercel.app/home](https://sweet-salty.vercel.app/home) sem precisar configurar nada localmente!
+
 ### 🏠 Páginas Principais
 
+**💻 Desenvolvimento Local:**
 - **🏡 Home** (`http://localhost:3002/home`) - Página inicial com receitas populares
 - **🍳 Receitas** (`http://localhost:3002/receitas`) - Lista completa de receitas
 - **📖 Receita Individual** (`http://localhost:3002/receitas/[id]`) - Detalhes específicos
 - **👥 Usuários** (`http://localhost:3002/usuarios`) - Gestão de usuários
 - **📞 Contato** (`http://localhost:3002/contato`) - Formulário de contato
 - **👩‍💻 Desenvolvedora** (`http://localhost:3002/desenvolvedora`) - Sobre a criadora
+
+**🌐 Produção (Vercel):**
+- **🏡 Home** (`https://sweet-salty.vercel.app/home`) - Página inicial
+- **🍳 Receitas** (`https://sweet-salty.vercel.app/receitas`) - Lista de receitas
+- **📞 Contato** (`https://sweet-salty.vercel.app/contato`) - Formulário de contato
+- **👩‍💻 Desenvolvedora** (`https://sweet-salty.vercel.app/desenvolvedora`) - Sobre a criadora
 
 ### 🔄 Fluxo de Navegação
 
