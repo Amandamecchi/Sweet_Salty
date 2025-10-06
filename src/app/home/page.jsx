@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from "./home.module.css";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
@@ -88,7 +89,16 @@ export default function Home() {
                 </div>
                 
                 <div className={styles.developerSection}>
-                    <h2 className={styles.developerTitle}>💻 Conheça a Desenvolvedora</h2>
+                    <h2 className={styles.developerTitle}>
+                        <Image 
+                            src="/icons/computer.png" 
+                            alt="Computer" 
+                            width={32} 
+                            height={32} 
+                            className={styles.developerIcon}
+                        />
+                        Conheça a Desenvolvedora
+                    </h2>
                     <p className={styles.developerText}>
                         Descubra a história por trás do Sweet & Salty e as tecnologias utilizadas neste projeto!
                     </p>
