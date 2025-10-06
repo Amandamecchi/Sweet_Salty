@@ -42,66 +42,180 @@ Antes de começar, certifique-se de ter instalado:
 - [npm](https://www.npmjs.com/) (geralmente vem com Node.js)
 - [Git](https://git-scm.com/)
 
-## 🛠️ Instalação e Configuração
+## 🛠️ Tutorial Completo de Instalação e Configuração
 
-### 1. Clone o Repositório Frontend
+> ⚠️ **IMPORTANTE**: Siga os passos apresentada para evitar problemas de configuração.
+
+### 🎯 Parte 1: Configuração do Backend
+
+#### 1.1. Clone o Repositório do Backend
+
+Em um terminal separado:
+
+```
+git clone https://github.com/Amandamecchi/BackEnd-SweetSalty.git
+cd BackEnd-SweetSalty
+```
+
+#### 1.2. Instale as Dependências do Backend
+
+```bash
+npm install
+```
+
+#### 1.3. Configure o Banco de Dados
+
+1. **Abra o banco de dados** conforme as instruções do projeto backend
+2. **Execute os scripts SQL** necessários para criar as tabelas
+3. **Verifique se o banco está funcionando** corretamente
+
+#### 1.4. Configure as Variáveis de Ambiente do Backend
+
+Crie um arquivo `.env` na raiz do projeto backend com as seguintes configurações:
+
+```env
+# Configurações do Banco de Dados
+DB_HOST=localhost
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=sweetsalty
+
+# Configurações do Servidor
+PORT=3000
+NODE_ENV=development
+
+```
+
+> 📝 **Nota**: Ajuste os valores de acordo com sua configuração local do banco de dados.
+
+#### 1.5. Execute o Backend
+
+```bash
+npm start
+```
+
+✅ **Verificação**: O backend deve estar rodando na porta 3000. Você deve ver uma mensagem como:
+```
+Servidor rodando na porta 3000
+Conectado ao banco de dados
+```
+
+---
+
+### 🎯 Parte 2: Configuração do Frontend
+
+#### 2.1. Clone o Repositório do Frontend
+
+Abra um **novo terminal** (mantenha o backend rodando no anterior) e execute:
 
 ```bash
 git clone https://github.com/Amandamecchi/Sweet_Salty.git
 cd Sweet_Salty
 ```
 
-### 2. Clone o Repositório Backend
-
-Em um terminal separado:
-
-```bash
-git clone https://github.com/Amandamecchi/BackEnd-SweetSalty.git
-cd BackEnd-SweetSalty
-```
-
-### 3. Instale as Dependências do Frontend
-
-```bash
-npm install
-```
-
-### 4. Configure as Variáveis de Ambiente
+#### 2.2. Configure as Variáveis de Ambiente do Frontend
 
 Crie um arquivo `.env.local` na raiz do projeto frontend:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
-### 5. Execute o Backend
+> ⚠️ **ATENÇÃO**: Use  a porta 3000, que é onde o backend está rodando.
 
-Siga as instruções no repositório do backend para configurar e executar a API.
+#### 2.3. Instale as Dependências do Frontend
 
-### 6. Execute o Frontend
+```bash
+npm i
+```
+
+#### 2.4. Execute o Frontend
 
 ```bash
 npm run dev
 ```
 
-O projeto estará disponível em: [http://localhost:3000](http://localhost:3000)
+✅ **Verificação**: O frontend iniciará automaticamente. Você verá uma mensagem como:
+```
+▲ Next.js 15.5.2
+- Local:        http://localhost:3002
+- Network:      http://192.168.x.x:3002
 
-## 📱 Como Acessar o Site
+✓ Ready in 2.1s
+```
 
-### Desenvolvimento Local
+> 📝 **Nota**: O Next.js automaticamente encontrará uma porta disponível (geralmente 3002, já que o backend está na 3000).
 
-1. **Certifique-se de que o backend está rodando** (geralmente na porta 5000)
-2. **Execute o frontend** com `npm run dev`
-3. **Abra seu navegador** e acesse: `http://localhost:3000`
+---
 
-### Navegação
+### 🌐 Acessando o Projeto
 
-- **Home** (`/home`) - Página inicial com receitas populares
-- **Receitas** (`/receitas`) - Lista completa de receitas
-- **Receita Individual** (`/receitas/[id]`) - Detalhes de uma receita específica
-- **Usuários** (`/usuarios`) - Gestão de usuários
-- **Contato** (`/contato`) - Formulário de contato
-- **Desenvolvedora** (`/desenvolvedora`) - Sobre a criadora do projeto
+1. **Abra seu navegador**
+2. **Acesse**: `http://localhost:3002` (ou a porta indicada no terminal)
+3. **Navegue pelas páginas**:
+   - **Home**: `/home` - Receitas populares
+   - **Receitas**: `/receitas` - Lista completa
+   - **Contato**: `/contato` - Formulário de contato
+   - **Desenvolvedora**: `/desenvolvedora` - Sobre o projeto
+
+---
+
+### 🔧 Solução de Problemas Comuns
+
+#### ❌ Erro "Cannot connect to database"
+**Solução**: Verifique se:
+- O banco de dados está rodando
+- As credenciais no arquivo `.env` do backend estão corretas
+- As tabelas foram criadas corretamente
+
+
+---
+
+### 📝 Resumo dos Comandos
+
+**Terminal 1 - Backend:**
+```bash
+git clone https://github.com/Amandamecchi/BackEnd-SweetSalty.git
+cd BackEnd-SweetSalty
+npm install
+# Configure .env com porta 3000
+npm start
+```
+
+**Terminal 2 - Frontend:**
+```bash
+git clone https://github.com/Amandamecchi/Sweet_Salty.git
+cd Sweet_Salty
+# Configure .env.local: NEXT_PUBLIC_API_URL=http://localhost:3000
+npm i
+npm run dev
+```
+
+**Resultado**: Frontend em `http://localhost:3002` conectado ao backend em `http://localhost:3000`
+
+---
+
+## 📱 Navegação do Site
+
+Após seguir o tutorial completo acima, você poderá navegar pelas seguintes páginas:
+
+### 🏠 Páginas Principais
+
+- **🏡 Home** (`http://localhost:3002/home`) - Página inicial com receitas populares
+- **🍳 Receitas** (`http://localhost:3002/receitas`) - Lista completa de receitas
+- **📖 Receita Individual** (`http://localhost:3002/receitas/[id]`) - Detalhes específicos
+- **👥 Usuários** (`http://localhost:3002/usuarios`) - Gestão de usuários
+- **📞 Contato** (`http://localhost:3002/contato`) - Formulário de contato
+- **👩‍💻 Desenvolvedora** (`http://localhost:3002/desenvolvedora`) - Sobre a criadora
+
+### 🔄 Fluxo de Navegação
+
+1. **Inicie pela Home** - Veja as receitas mais populares
+2. **Explore as Receitas** - Navegue pela lista completa
+3. **Veja Detalhes** - Clique em qualquer receita para ver ingredientes e preparo
+4. **Conheça os Usuários** - Veja quem faz parte da comunidade
+5. **Entre em Contato** - Use o formulário para feedback
+6. **Sobre o Projeto** - Conheça a história e tecnologias usadas
 
 ## 🎨 Estrutura do Projeto
 
