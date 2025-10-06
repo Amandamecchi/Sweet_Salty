@@ -2,6 +2,8 @@ import React from "react";
 import { Poppins } from "next/font/google";
 import Header from "../components/Header";
 import ScrollToTop from "../components/ScrollToTop";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
 
 const font = Poppins({
@@ -27,6 +29,17 @@ export default function RootLayout({ children }) {
                 <Header />
                 {children}
                 <ScrollToTop />
+                <ToastContainer 
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </body>
         </html>
     );

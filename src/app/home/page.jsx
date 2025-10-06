@@ -86,6 +86,16 @@ export default function Home() {
                         <button className={styles.button}>Ver Usuários</button>
                     </Link>
                 </div>
+                
+                <div className={styles.developerSection}>
+                    <h2 className={styles.developerTitle}>💻 Conheça a Desenvolvedora</h2>
+                    <p className={styles.developerText}>
+                        Descubra a história por trás do Sweet & Salty e as tecnologias utilizadas neste projeto!
+                    </p>
+                    <Link href="/desenvolvedora">
+                        <button className={styles.developerButton}>Sobre a Desenvolvedora</button>
+                    </Link>
+                </div>
             </div>
             <Footer />
         </>

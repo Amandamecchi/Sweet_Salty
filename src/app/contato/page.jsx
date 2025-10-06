@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 import styles from './contato.module.css';
 import Banner from '@/components/Banner';
 import Footer from '@/components/Footer';
@@ -16,7 +17,6 @@ export default function Contato() {
     tipoContato: 'duvida'
   });
   const [loading, setLoading] = useState(false);
-  const [sucessoEnvio, setSucessoEnvio] = useState(false);
   const [erro, setErro] = useState('');
 
   const handleInputChange = (e) => {
@@ -37,7 +37,6 @@ export default function Contato() {
     setLoading(true);
     setErro('');
 
-    // Validações
     if (!formData.nomeCompleto.trim()) {
       setErro('Nome completo é obrigatório');
       setLoading(false);
@@ -56,22 +55,27 @@ export default function Contato() {
       return;
     }
 
-    if (!formData.mensagem.trim() || formData.mensagem.length < 10) {
-      setErro('Mensagem deve ter pelo menos 10 caracteres');
+    if (!formData.mensagem.trim()) {
+      setErro('Mensagem é obrigatória');
       setLoading(false);
       return;
     }
 
-    // Simular envio do formulário
     try {
-      // Aqui você pode implementar a lógica de envio para uma API
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       console.log('Dados do formulário:', formData);
-      setSucessoEnvio(true);
       
-      // Reset form
-      setFormData({
+      toast.success('Mensagem enviada com sucesso! Nossa equipe retornará o contato em até 24 horas úteis.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      
+       setFormData({
         nomeCompleto: '',
         email: '',
         telefone: '',
@@ -81,6 +85,7 @@ export default function Contato() {
       });
     } catch (error) {
       setErro('Erro ao enviar mensagem. Tente novamente.');
+      toast.error('Erro ao enviar mensagem. Tente novamente.');
     } finally {
       setLoading(false);
     }
@@ -89,38 +94,6 @@ export default function Contato() {
   const handleGoBack = () => {
     router.back();
   };
-
-  if (sucessoEnvio) {
-    return (
-      <>
-        <Banner alt="Sweet & Salty" className="medium" />
-        <main className={styles.main}>
-          <div className={styles.container}>
-            <div className={styles.sucessoContainer}>
-              <div className={styles.sucessoIcon}>✓</div>
-              <h1 className={styles.sucessoTitulo}>Mensagem Enviada com Sucesso!</h1>
-              <p className={styles.sucessoTexto}>
-                Obrigado por entrar em contato conosco! Recebemos sua mensagem e nossa equipe 
-                retornará o contato em até 24 horas úteis.
-              </p>
-              <div className={styles.botoesContainer}>
-                <button onClick={handleGoBack} className={styles.botaoSecundario}>
-                  Voltar
-                </button>
-                <button 
-                  onClick={() => setSucessoEnvio(false)} 
-                  className={styles.botaoPrimario}
-                >
-                  Enviar Nova Mensagem
-                </button>
-              </div>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
-  }
 
   return (
     <>
@@ -245,9 +218,6 @@ export default function Contato() {
                   rows="6"
                   required
                 />
-                <span className={styles.contador}>
-                  {formData.mensagem.length}/500 caracteres
-                </span>
               </div>
 
               <div className={styles.botoesContainer}>
