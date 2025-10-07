@@ -102,7 +102,7 @@ NODE_ENV=development
 #### 1.5. Execute o Backend
 
 ```bash
-npm start
+npm run dev
 ```
 
 ✅ **Verificação**: O backend deve estar rodando na porta 3000. Você deve ver uma mensagem como:
