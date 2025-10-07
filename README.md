@@ -124,7 +124,7 @@ cd Sweet_Salty
 
 #### 2.2. Configure as Variáveis de Ambiente do Frontend
 
-Crie um arquivo `.env.local` na raiz do projeto frontend:
+Crie um arquivo `.env` na raiz do projeto frontend:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:3000
