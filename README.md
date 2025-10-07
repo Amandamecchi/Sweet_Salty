@@ -65,7 +65,6 @@ Em um terminal separado:
 
 ```
 git clone https://github.com/Amandamecchi/BackEnd-SweetSalty.git
-cd BackEnd-SweetSalty
 ```
 
 #### 1.2. Instale as Dependências do Backend
@@ -93,7 +92,6 @@ DB_NAME=sweetsalty
 
 # Configurações do Servidor
 PORT=3000
-NODE_ENV=development
 
 ```
 
